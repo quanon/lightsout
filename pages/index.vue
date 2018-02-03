@@ -2,16 +2,19 @@
   <div id="app">
     <div class="ui container">
       <SquareMatrix/>
+      <RandomizeButton/>
     </div>
   </div>
 </template>
 
 <script>
 import SquareMatrix from '~/components/SquareMatrix.vue';
+import RandomizeButton from '~/components/RandomizeButton.vue';
 
 export default {
   components: {
-    SquareMatrix
+    SquareMatrix,
+    RandomizeButton
   }
 };
 </script>

@@ -4,6 +4,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'; // eslint-disable-line import/no-extraneous-dependencies
+
 export default {
   props: {
     active: Boolean,
@@ -17,6 +19,8 @@ export default {
   },
   methods: {
     onClick() {
+      if (this.disabled) return;
+
       this.pushed = true;
       this.$store.dispatch('push', this.coordinate);
       setTimeout(() => {
@@ -33,7 +37,10 @@ export default {
         active: this.active,
         pushed: this.pushed
       };
-    }
+    },
+    ...mapGetters([
+      'disabled'
+    ])
   }
 };
 </script>
