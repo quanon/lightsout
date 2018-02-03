@@ -39,15 +39,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$square-width: calc((100vmin - 10.0rem) / 5);
+
 .ui.basic.button {
-  width: 10vmin;
-  height: 10vmin;
+  width: $square-width;
+  height: $square-width;
   margin: 0.5vmin 0.25vmin;
   background-color: #e6e6e6 !important;
   box-shadow: 0 1vmin 0 #c6c6c6;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: transform .05s ease-in-out;
 
   &.pushed {
     box-shadow: none;
